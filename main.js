@@ -73,26 +73,28 @@ const projectData = {
 
 // Smooth reveal effect on scroll
 const gridItems = document.querySelectorAll('.group');
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+if (gridItems.length > 0) {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            entry.target.style.transitionDelay = `${(index % 3) * 100}ms`;
-            entry.target.classList.add('opacity-100');
-            entry.target.classList.remove('opacity-0', 'translate-y-4');
-            observer.unobserve(entry.target);
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.transitionDelay = `${(index % 3) * 100}ms`;
+                entry.target.classList.add('opacity-100');
+                entry.target.classList.remove('opacity-0', 'translate-y-4');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    gridItems.forEach(item => {
+        item.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-1000', 'ease-out');
+        observer.observe(item);
     });
-}, observerOptions);
-
-gridItems.forEach(item => {
-    item.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-1000', 'ease-out');
-    observer.observe(item);
-});
+}
 
 // SPA Navigation Logic
 const portfolioGrid = document.getElementById('portfolio-grid');
@@ -128,17 +130,17 @@ function updateActiveState(activeId) {
     });
 
     // Reset main navigation links (work, about, newsletter)
-    const workLink = document.querySelector('a[data-path="work"]');
-    if (workLink) {
-        workLink.classList.remove('text-primary-container', 'underline', 'underline-offset-8');
-        workLink.classList.add('text-on-surface-variant');
-    }
+    const workLinks = document.querySelectorAll('a[data-path="work"]');
+    workLinks.forEach(link => {
+        link.classList.remove('text-primary-container', 'underline', 'underline-offset-8');
+        link.classList.add('text-on-surface-variant');
+    });
 
     if (activeId === 'work') {
-        if (workLink) {
-            workLink.classList.add('text-primary-container', 'underline', 'underline-offset-8');
-            workLink.classList.remove('text-on-surface-variant');
-        }
+        workLinks.forEach(link => {
+            link.classList.add('text-primary-container', 'underline', 'underline-offset-8');
+            link.classList.remove('text-on-surface-variant');
+        });
     } else {
         const activeLink = document.querySelector(`#nav-projects a[data-project-id="${activeId}"]`);
         if (activeLink) {
@@ -151,14 +153,22 @@ function updateActiveState(activeId) {
 // Open project detail
 function showProject(id) {
     const data = projectData[id];
-    if (!data) return;
+    if (!data || !portfolioGrid || !projectDetail) return;
 
-    document.getElementById('detail-title').textContent = data.title;
-    document.getElementById('detail-image').src = data.image;
-    document.getElementById('detail-image').alt = data.title;
-    document.getElementById('detail-description').textContent = data.description;
-    document.getElementById('detail-role').textContent = data.role;
-    document.getElementById('detail-year').textContent = data.year;
+    const detailTitle = document.getElementById('detail-title');
+    const detailImage = document.getElementById('detail-image');
+    const detailDescription = document.getElementById('detail-description');
+    const detailRole = document.getElementById('detail-role');
+    const detailYear = document.getElementById('detail-year');
+
+    if (detailTitle) detailTitle.textContent = data.title;
+    if (detailImage) {
+        detailImage.src = data.image;
+        detailImage.alt = data.title;
+    }
+    if (detailDescription) detailDescription.textContent = data.description;
+    if (detailRole) detailRole.textContent = data.role;
+    if (detailYear) detailYear.textContent = data.year;
 
     portfolioGrid.classList.add('hidden');
     projectDetail.classList.remove('hidden');
@@ -168,6 +178,7 @@ function showProject(id) {
 
 // Show portfolio grid
 function showPortfolio() {
+    if (!portfolioGrid || !projectDetail) return;
     projectDetail.classList.add('hidden');
     portfolioGrid.classList.remove('hidden');
     updateActiveState('work');
@@ -185,13 +196,24 @@ document.querySelectorAll('#portfolio-grid a[href^="project.html?id="]').forEach
 });
 
 // Bind back button click event
-document.getElementById('back-to-portfolio').addEventListener('click', (e) => {
-    e.preventDefault();
-    showPortfolio();
-});
+const backToPortfolio = document.getElementById('back-to-portfolio');
+if (backToPortfolio) {
+    backToPortfolio.addEventListener('click', (e) => {
+        e.preventDefault();
+        showPortfolio();
+    });
+}
 
 // Bind header Work link to restore portfolio view
-document.querySelector('a[data-path="work"]').addEventListener('click', (e) => {
-    e.preventDefault();
-    showPortfolio();
+const workLinks = document.querySelectorAll('a[data-path="work"]');
+workLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // If we are on index.html, we just show/hide SPA sections
+        if (portfolioGrid && projectDetail) {
+            e.preventDefault();
+            showPortfolio();
+        }
+    });
 });
+
+

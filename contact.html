@@ -132,16 +132,16 @@
 </head>
 
 <body class="bg-surface font-body-md text-on-surface">
-    <header class="fixed top-0 left-0 right-0 h-20 bg-surface-container-lowest z-50 flex items-center justify-between px-unit-md border-b border-surface-container-highest">
+    <header class="fixed top-0 left-0 right-0 h-20 bg-surface-container-lowest z-50 flex items-center justify-between px-4 sm:px-unit-md border-b border-surface-container-highest">
         <div class="flex items-center gap-unit-md">
-            <span class="font-display text-headline-md tracking-tighter text-primary uppercase">Karen Barboza</span>
+            <a href="index.html" class="font-display text-lg sm:text-headline-md tracking-tighter text-primary uppercase">Karen Barboza</a>
         </div>
-        <nav class="flex flex-row gap-unit-md font-label-sm items-center">
-            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="work" href="index.html">Work</a>
-            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="about" href="about.html">About</a>
+        <nav class="flex flex-row gap-3 sm:gap-unit-md font-label-sm items-center text-xs sm:text-label-sm">
+            <a class="font-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="work" href="index.html">Work</a>
+            <a class="font-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="about" href="about.html">About</a>
             <a class="font-label-sm transition-all uppercase tracking-widest text-primary-container underline underline-offset-8 cursor-pointer" data-path="contact" href="contact.html">Contact</a>
         </nav>
-        <div class="flex gap-unit-sm text-on-surface-variant items-center">
+        <div class="hidden md:flex gap-unit-sm text-on-surface-variant items-center">
             <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">alternate_email</span></a>
             <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a>
             <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
@@ -151,18 +151,18 @@
 
     <div class="w-full pt-20">
         <!-- Sub-header back button -->
-        <div class="sticky top-20 bg-surface-container-lowest/80 backdrop-blur-md z-40 border-b border-surface-container-highest py-4 px-unit-md">
+        <div class="sticky top-20 bg-surface-container-lowest/80 backdrop-blur-md z-40 border-b border-surface-container-highest py-4 px-6 md:px-unit-md">
             <a href="index.html" class="flex items-center gap-unit-xs text-label-sm font-label-sm hover:text-primary transition-colors uppercase tracking-widest text-on-surface-variant">
                 <span class="material-symbols-outlined text-[16px]">arrow_back</span> Back to Work
             </a>
         </div>
 
-        <main class="relative bg-surface w-full min-h-screen flex flex-col justify-between p-unit-lg max-w-6xl mx-auto space-y-unit-lg">
+        <main class="relative bg-surface w-full min-h-screen flex flex-col justify-between p-6 md:p-unit-md lg:p-unit-lg max-w-6xl mx-auto space-y-unit-lg">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pt-8">
                 <!-- Left: Title and Visual Info -->
                 <div class="md:col-span-5 space-y-8 text-on-surface-variant">
                     <div class="space-y-4">
-                        <h1 class="font-display text-display text-primary uppercase tracking-tight leading-none text-4xl md:text-6xl">Contact</h1>
+                        <h1 class="font-display text-4xl sm:text-5xl md:text-display text-primary uppercase tracking-tight leading-none">Contact</h1>
                         <p class="font-body-lg text-lg text-on-surface">
                             Let's bring your creative visions to life. Get in touch for collaboration, commissions, or inquiries.
                         </p>
@@ -214,6 +214,7 @@
             </div>
         </main>
     </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
