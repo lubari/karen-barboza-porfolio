@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb59a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#802a00",
+                        "inverse-surface": "#e2e2e2",
+                        "primary-fixed": "#ffdbce",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-container": "#ff5c00",
+                        "on-surface-variant": "#e4beb1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-tint": "#ffb59a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-bright": "#393939",
+                        "on-primary": "#5a1b00",
+                        "on-tertiary": "#313030",
+                        "secondary-container": "#454747",
+                        "surface-dim": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "surface-container-low": "#1b1b1b",
+                        "outline-variant": "#5b4137",
+                        "surface-container-highest": "#353535",
+                        "surface": "#131313",
+                        "on-secondary-container": "#b4b5b5",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-primary": "#a73a00",
+                        "on-primary-fixed": "#370e00",
+                        "on-tertiary-container": "#2c2b2b",
+                        "outline": "#ab897d",
+                        "on-primary-container": "#521800",
+                        "tertiary": "#c8c6c5",
+                        "background": "#131313",
+                        "secondary": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353535",
+                        "primary": "#ffb59a",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#2f3131",
+                        "tertiary-container": "#949292",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "1.5rem",
+                        "gutter": "2rem",
+                        "unit-xl": "8rem",
+                        "unit-md": "2rem",
+                        "unit-lg": "4rem",
+                        "unit-sm": "1rem",
+                        "margin-desktop": "4rem",
+                        "unit-xs": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["'Inter'"],
+                        "headline-md": ["'Inter'"],
+                        "display": ["'Inter'"],
+                        "body-md": ["'Inter'"],
+                        "body-lg": ["'Inter'"],
+                        "label-sm": ["'Inter'"],
+                        "headline-lg-mobile": ["'Inter'"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {
+                            "lineHeight": "1.2",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }],
+                        "headline-md": ["24px", {
+                            "lineHeight": "1.3",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "600"
+                        }],
+                        "display": ["72px", {
+                            "lineHeight": "1.1",
+                            "letterSpacing": "-0.04em",
+                            "fontWeight": "800"
+                        }],
+                        "body-md": ["16px", {
+                            "lineHeight": "1.6",
+                            "letterSpacing": "0",
+                            "fontWeight": "400"
+                        }],
+                        "body-lg": ["18px", {
+                            "lineHeight": "1.6",
+                            "letterSpacing": "0",
+                            "fontWeight": "400"
+                        }],
+                        "label-sm": ["12px", {
+                            "lineHeight": "1.2",
+                            "letterSpacing": "0.05em",
+                            "fontWeight": "500"
+                        }],
+                        "headline-lg-mobile": ["32px", {
+                            "lineHeight": "1.2",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+    <header class="fixed top-0 left-0 right-0 h-20 bg-surface-container-lowest z-50 flex items-center justify-between px-unit-md border-b border-surface-container-highest">
+        <div class="flex items-center gap-unit-md">
+            <span class="font-display text-headline-md tracking-tighter text-primary uppercase">Karen Barboza</span>
+        </div>
+        <nav class="flex flex-row gap-unit-md font-label-sm items-center">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="work" href="index.html">Work</a>
+            <a class="font-label-sm transition-all uppercase tracking-widest text-primary-container underline underline-offset-8 cursor-pointer" data-path="about" href="about.html">About</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="contact" href="contact.html">Contact</a>
+        </nav>
+        <div class="flex gap-unit-sm text-on-surface-variant items-center">
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">alternate_email</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">movie</span></a>
+        </div>
+    </header>
+
+    <div class="w-full pt-20">
+        <!-- Sub-header back button -->
+        <div class="sticky top-20 bg-surface-container-lowest/80 backdrop-blur-md z-40 border-b border-surface-container-highest py-4 px-unit-md">
+            <a href="index.html" class="flex items-center gap-unit-xs text-label-sm font-label-sm hover:text-primary transition-colors uppercase tracking-widest text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span> Back to Work
+            </a>
+        </div>
+
+        <main class="relative bg-surface w-full min-h-screen flex flex-col justify-between p-unit-lg max-w-6xl mx-auto space-y-unit-lg">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pt-8">
+                <!-- Left: Portrait Image (Existing Project Image used as visual accent) -->
+                <div class="md:col-span-5">
+                    <div class="border border-surface-container-highest overflow-hidden aspect-[4/5] bg-surface-container">
+                        <img id="about-image" alt="Karen Barboza" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsk2Xo8ooo7iBaMVJs1JtrDahVdYa7MLmS0FbbA4oZ6BMU38XGuu4ysG0HlH9xfk6wloG33agJ0vXcYJByD0G9Mze7wuqfWuVchBAhoLfa3Yx6ZzS8-d4Apch-0YLidFMQctxQLVcz-kTwkP3irHrFKpY8Iu42gOvU4sFyaMZ968INzmP8qiutxQPxQc-9vg6NoKFNZ0bN0o0YdlKMnbnNCs6eQAc6OSEa6k-hrv2BNUFbzSuok5eQW4w" />
+                    </div>
+                </div>
+
+                <!-- Right: Bio and Information -->
+                <div class="md:col-span-7 space-y-8 text-on-surface-variant">
+                    <div class="space-y-4">
+                        <h1 class="font-display text-display text-primary uppercase tracking-tight leading-none text-4xl md:text-6xl">About Me</h1>
+                        <p class="font-body-lg text-lg md:text-xl text-on-surface">
+                            I am Karen Barboza, a multi-disciplinary Art Director and Designer focused on creating tactile typographic systems, editorial design, and engaging visual stories.
+                        </p>
+                    </div>
+
+                    <div class="prose prose-invert">
+                        <p class="font-body-md text-base leading-relaxed">
+                            Through structured layout frameworks, high-contrast monochrome experiments, and rich visual textures, I bridge the gap between digital interactivity and print aesthetics. My practice operates at the intersection of creative direction, packaging, and brand strategy.
+                        </p>
+                    </div>
+
+                    <!-- Services & Core Capabilities -->
+                    <div class="space-y-4 pt-6 border-t border-surface-container-highest">
+                        <h2 class="font-headline-md text-headline-md text-primary uppercase tracking-tight text-lg">Capabilities</h2>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-label-sm uppercase tracking-wider">
+                            <div>• Art Direction</div>
+                            <div>• Editorial & Print Design</div>
+                            <div>• Branding & Visual Identity</div>
+                            <div>• Motion Graphics</div>
+                            <div>• Packaging Design</div>
+                            <div>• UI/UX Design</div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-4 pt-6 border-t border-surface-container-highest">
+                        <h2 class="font-headline-md text-headline-md text-primary uppercase tracking-tight text-lg">Get in Touch</h2>
+                        <p class="font-body-md text-base">
+                            Always open to collaboration on editorial projects, identity systems, and artistic visual experiments.
+                        </p>
+                        <a href="mailto:hello@karenbarboza.com" class="inline-block font-label-sm uppercase tracking-widest text-primary-container hover:text-primary underline underline-offset-8 transition-colors">
+                            hello@karenbarboza.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Top Button -->
+            <div class="flex justify-center py-unit-md border-t border-surface-container-highest w-full pt-12">
+                <button class="flex items-center gap-unit-xs font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors uppercase tracking-tighter" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <span class="material-symbols-outlined text-[16px]">north</span> Back to Top
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
