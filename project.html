@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb59a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#802a00",
+                        "inverse-surface": "#e2e2e2",
+                        "primary-fixed": "#ffdbce",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "primary-container": "#ff5c00",
+                        "on-surface-variant": "#e4beb1",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-tint": "#ffb59a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-bright": "#393939",
+                        "on-primary": "#5a1b00",
+                        "on-tertiary": "#313030",
+                        "secondary-container": "#454747",
+                        "surface-dim": "#131313",
+                        "surface-container": "#1f1f1f",
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "surface-container-low": "#1b1b1b",
+                        "outline-variant": "#5b4137",
+                        "surface-container-highest": "#353535",
+                        "surface": "#131313",
+                        "on-secondary-container": "#b4b5b5",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "inverse-primary": "#a73a00",
+                        "on-primary-fixed": "#370e00",
+                        "on-tertiary-container": "#2c2b2b",
+                        "outline": "#ab897d",
+                        "on-primary-container": "#521800",
+                        "tertiary": "#c8c6c5",
+                        "background": "#131313",
+                        "secondary": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353535",
+                        "primary": "#ffb59a",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#2f3131",
+                        "tertiary-container": "#949292",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "1.5rem",
+                        "gutter": "2rem",
+                        "unit-xl": "8rem",
+                        "unit-md": "2rem",
+                        "unit-lg": "4rem",
+                        "unit-sm": "1rem",
+                        "margin-desktop": "4rem",
+                        "unit-xs": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["'Inter'"],
+                        "headline-md": ["'Inter'"],
+                        "display": ["'Inter'"],
+                        "body-md": ["'Inter'"],
+                        "body-lg": ["'Inter'"],
+                        "label-sm": ["'Inter'"],
+                        "headline-lg-mobile": ["'Inter'"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {
+                            "lineHeight": "1.2",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }],
+                        "headline-md": ["24px", {
+                            "lineHeight": "1.3",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "600"
+                        }],
+                        "display": ["72px", {
+                            "lineHeight": "1.1",
+                            "letterSpacing": "-0.04em",
+                            "fontWeight": "800"
+                        }],
+                        "body-md": ["16px", {
+                            "lineHeight": "1.6",
+                            "letterSpacing": "0",
+                            "fontWeight": "400"
+                        }],
+                        "body-lg": ["18px", {
+                            "lineHeight": "1.6",
+                            "letterSpacing": "0",
+                            "fontWeight": "400"
+                        }],
+                        "label-sm": ["12px", {
+                            "lineHeight": "1.2",
+                            "letterSpacing": "0.05em",
+                            "fontWeight": "500"
+                        }],
+                        "headline-lg-mobile": ["32px", {
+                            "lineHeight": "1.2",
+                            "letterSpacing": "-0.02em",
+                            "fontWeight": "700"
+                        }]
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+    <header class="fixed top-0 left-0 right-0 h-20 bg-surface-container-lowest z-50 flex items-center justify-between px-unit-md border-b border-surface-container-highest">
+        <div class="flex items-center gap-unit-md">
+            <span class="font-display text-headline-md tracking-tighter text-primary uppercase">Karen Barboza</span>
+        </div>
+        <nav class="flex flex-row gap-unit-md font-label-sm items-center">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="work" href="index.html">Work</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="about" href="index.html#about">About</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer" data-path="newsletter" href="index.html#newsletter">Newsletter</a>
+        </nav>
+        <div class="flex gap-unit-sm text-on-surface-variant items-center">
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">alternate_email</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">share</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">public</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-[20px]">movie</span></a>
+        </div>
+    </header>
+    <div class="w-full pt-20">
+        <!-- Sub-header back button -->
+        <div class="sticky top-20 bg-surface-container-lowest/80 backdrop-blur-md z-40 border-b border-surface-container-highest py-4 px-unit-md">
+            <a href="index.html" class="flex items-center gap-unit-xs text-label-sm font-label-sm hover:text-primary transition-colors uppercase tracking-widest text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px]">arrow_back</span> Back to Work
+            </a>
+        </div>
+        <main class="relative bg-surface w-full min-h-screen flex flex-col justify-between">
+            <div class="p-unit-lg max-w-4xl mx-auto w-full space-y-unit-lg my-auto">
+                <h1 id="project-title" class="font-display text-display text-primary uppercase tracking-tight leading-none">Project Title</h1>
+                <div class="border border-surface-container-highest overflow-hidden aspect-video bg-surface-container">
+                    <img id="project-image" alt="Project Image" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="" />
+                </div>
+                <div class="space-y-unit-md text-on-surface-variant font-body-lg">
+                    <p id="project-description">Loading project description...</p>
+                    <div class="grid grid-cols-2 gap-unit-md pt-unit-md border-t border-surface-container-highest text-sm font-label-sm uppercase tracking-wider text-on-surface-variant">
+                        <div>
+                            <span class="block text-primary">Role</span>
+                            <span id="project-role">Lead Art Director / Designer</span>
+                        </div>
+                        <div>
+                            <span class="block text-primary">Year</span>
+                            <span id="project-year">2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back to Top Button -->
+            <div class="flex justify-center py-unit-md border-t border-surface-container-highest w-full">
+                <button class="flex items-center gap-unit-xs font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors uppercase tracking-tighter" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <span class="material-symbols-outlined text-[16px]">north</span> Back to Top
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const projects = {
+            "talk-about-it": {
+                title: "Talk About It - Grade 2",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLv-RuCn6HygoiuJ53G7hykaYYUEYKxktwsPa0J8W0-0A8FuyYbcE87NH7rcjgCD6egznrw_a5wGH2U4ukIFvLQcaflLzBlI74VyQBqOZn_fbr7kwxgroIlvSBb4IGqAGhQQzyiKtTxrWtHv9ryPQdQX-PNJFnbdn04fX8CFPmsLazxoH1UzCGy-rvzrT4_gxiPplvdB6_sp65vhxuFXjiDB9akUpqRpyXssF_NWEgvbk2dSTiowb4KErw",
+                description: "An interactive, educational storytelling design project tailored for grade school learning platforms, focusing on speech development, graphical textures, and tactile typography.",
+                role: "Art Direction & UI Design",
+                year: "2024"
+            },
+            "light-we-chase": {
+                title: "The Light We Chase - Bloom",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLs1hg7y4Ebd8I_nDHje_TquA73zylk-l5TP4aDSDTQpLtNETBYUGvYJfVvzMuVcVoyu_1sdfdrU72sfMfWsmDAHTcTIrph3wqMtq3NPDuA20K7UEssBer33Cm_BmTRybj4WW5oGu2bA1GNrYYspHEByLBph3_fnu078M9M1VTXsIFxdp0c7I8I5X9GeYMIMCF6HOZ65OfsmhVHYXPBVOoMfAbKaP03ZXzDDMH9NySwv3WjbHPnHs2s5SQ",
+                description: "A conceptual photographic and typographic project capturing the organic, ephemeral properties of floral structures blooming under experimental light installations.",
+                role: "Visual Direction",
+                year: "2024"
+            },
+            "rabbit": {
+                title: "Rabbit - Insightful",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLt_oI5xxzkOR9tPHj-iH1jF4UI4_CXkI5Bl-rvmZj95aQNvY-R7AM3uXBlI2BGsGH1E5IoyykJcBT8Wch4eogRPH-pE09FI4iFDsODUil9ZEJsWcQhaKToID_V0xgWufnQ1X8Lzk6wxz50emW8vAtx6VsFrf4XZjUuWDIFUQ1jmta0sSkmq_bmC0INuf-9Ff6FERqghmfDmzuyWeWmEWzGF6lmwU-Umqm6mKGYz4g5RJA5DMq_oWhl9",
+                description: "An investigative editorial design examining natural pattern formation, structured layout frameworks, and raw geometric illustrations.",
+                role: "Editorial Design",
+                year: "2023"
+            },
+            "hardcore-alphabet": {
+                title: "Hardcore Alphabet",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLtTpXOWBMNZOUwqrryGsmeER2hJT1hMkhvXOJQRXzbDBp6moh0mnNCfOmYdcc6Vq11g2JiXrKbXEBswrvHiyRSfK4KF215iIsNvFNxq96HhKAuh-rZDhXye3sOo_VnabToQEcJEdvjJjGGKRhjo7xwo0K7w-og3ZD44_FrBoy04sPVajVMxmXKpMdmlWQD9jrnptIFbuSBaAY39YhcpYaIwrPw4TbfJidAHnTDhq_3ZD1WRe1tAw7jg",
+                description: "An uncompromising typographic exercise exploring heavy, brutalist letterforms, high-contrast monochrome design, and physical poster prints.",
+                role: "Typography & Print",
+                year: "2024"
+            },
+            "art-of-sport": {
+                title: "Art of Sport",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLv0ZBt8MyHBMChJIOmkwr32QDsM_8G1VVacqpZ_QfroINIG2G1gv4ze5575fJWVop_XyVHkAVCc8TRiyY9q0BPizEQ3QNCSksPST5sBUwtasiOCYX4nOOG08QUL8Qs8DpDF5rZuRkQZJI_KtIDasNbVZ7lXYDWckP9l2b6M416jFgT3kTlmij2KS7sOiXPD4wdz6zjZ-5UZ0q5lHMfuLMYUgAgOFvX96iAd23wvUJnQ1P_y9SdUDxDo",
+                description: "Dynamic motion study and brand development capturing the beauty of athletic rhythm, spatial composition, and minimalist sports aesthetics.",
+                role: "Motion & Branding",
+                year: "2023"
+            },
+            "graphic-experimentation": {
+                title: "Graphic Experimentation",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLvi8FUQEo_SQfST1yTu5dWl0W9UOkTqQ4bomvdx6S5uLD1G-AuoGNhRyJvKE-Wkyo41KnJE2fhnlsUhzvfzbyVdAo3QAyMfQb6TmvAU70xdtmb1rKpJ4pQOdXQ1WAIN4C5JlD-9OVTEviGsli1iek-5L6vs3uGitUxugzW1v05ba_EZrdPrl_Hx6mC_ClQ1NKVDPvJGirFTzmGXteTEyvEqrqwxL_UHjGJoogDXmHuG28clCkbmnK_4hg",
+                description: "A sandbox of graphic ideas exploring glitch art, scanning textures, raw image treatments, and unexpected digital color combinations.",
+                role: "Creative Direction",
+                year: "2024"
+            },
+            "blues-legends": {
+                title: "Blues Legends",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLt3HZ2YH4vvFFuXW6uE8fQ1t55gXOXKfj_vez_Bj6iaQ7FveG7BRTB-ueGVGPaZ7BWomvlfKsNX0FG0UbFCyUYdoEEZGt3NclMNRst5l4kpjBTkKIXsRFJRFicmcwk6kDjO5ptoybixMwNEptU50e06M26sMjipwtfdfRWVONkLR4ceoFPOS8W9ozVFJpDw2aR4Dpz-dLc8HFEyN_USUWhRhjst01tR0geFvjR4kzA-ArzkvmWSkbDYUw",
+                description: "A tribute album design series featuring iconic layouts, high-contrast halftones, and vintage music packaging aesthetics.",
+                role: "Packaging Design",
+                year: "2023"
+            },
+            "skatin-not-stirred": {
+                title: "Skatin' Not Stirred",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLs-xcdWxVw4zir3BuF6dozg6-E5DAD7cHzHoNCadllcFxFgwpTZBwOdZK-1zrx8orszi-D4y5bcBVGW_fPuucSDwmDGuDOzseI-CXqpGZ1FaA_xal2w200OYSXFGWFMRUvQ_-mSV80RYVuki3o3vpom5sS5sM5r86migCdumzcwuFfvWhzqlXhzmXcyCygxEg8bMVwzYTuM4mS1OOGtmitWpbI3CeewMEst_HsjOVBjeRFu7y6j0qolKA",
+                description: "A rebellious skateboard deck illustration series celebrating dynamic curves, fluid patterns, and early street skateboarding culture.",
+                role: "Product Illustration",
+                year: "2024"
+            },
+            "touch-grass": {
+                title: "Touch Grass",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLtyoXveBKfIZgniLihtXHlxC3NTnq4TG5yG9wTJO2wi8yAYLsIOh_j7KyUgP2a9sVoURF1l9oicq6-SGjk08kXbTXN2RaH1adQL8K_Qk6DvsbeR7d8BYSwadrBo2c5EOrqd7S36ICOZ8pVgp4KiSl80ZslExpqz3CIqdIgecwhU-09p8BZL0XanFDk_4dXbTaNxw3wWK5C1IgWhaULV8Wsxqxs2uwojRmRXyT6Z6IC1eO5UpCbb5qyn",
+                description: "An outdoor brand campaign emphasizing disconnect from digital feeds, focusing on organic earth tones and raw outdoor adventure layouts.",
+                role: "Campaign Strategy",
+                year: "2024"
+            },
+            "two-sleepy-people": {
+                title: "Two Sleepy People",
+                image: "https://lh3.googleusercontent.com/aida/AP1WRLsk2Xo8ooo7iBaMVJs1JtrDahVdYa7MLmS0FbbA4oZ6BMU38XGuu4ysG0HlH9xfk6wloG33agJ0vXcYJByD0G9Mze7wuqfWuVchBAhoLfa3Yx6ZzS8-d4Apch-0YLidFMQctxQLVcz-kTwkP3irHrFKpY8Iu42gOvU4sFyaMZ968INzmP8qiutxQPxQc-9vg6NoKFNZ0bN0o0YdlKMnbnNCs6eQAc6OSEa6k-hrv2BNUFbzSuok5eQW4w",
+                description: "A soft, pastel-infused editorial design series documenting sleep patterns, ambient dream spaces, and modern architecture.",
+                role: "Layout & Art Direction",
+                year: "2024"
+            }
+        };
+
+        // Parse query params to load details
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        const project = projects[projectId] || projects["talk-about-it"]; // fallback
+
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-image').src = project.image;
+        document.getElementById('project-image').alt = project.title;
+        document.getElementById('project-description').textContent = project.description;
+        document.getElementById('project-role').textContent = project.role;
+        document.getElementById('project-year').textContent = project.year;
+    </script>
+</body>
+
+</html>

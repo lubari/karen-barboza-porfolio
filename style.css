@@ -1,0 +1,28 @@
+@layer base {
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        overscroll-behavior: none;
+    }
+
+    *:not([class*="material-symbols"]) {
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    main>:first-child {
+        margin-top: 0 !important;
+    }
+
+    main>:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed-dim": "#ffb59a", "secondary-fixed": "#e2e2e2", "on-primary-fixed-variant": "#802a00", "inverse-surface": "#e2e2e2", "primary-fixed": "#ffdbce", "on-error-container": "#ffdad6", "on-error": "#690005", "tertiary-fixed": "#e5e2e1", "on-secondary-fixed": "#1a1c1c", "primary-container": "#ff5c00", "on-surface-variant": "#e4beb1", "surface-container-high": "#2a2a2a", "on-tertiary-fixed": "#1c1b1b", "surface-tint": "#ffb59a", "tertiary-fixed-dim": "#c8c6c5", "surface-bright": "#393939", "on-primary": "#5a1b00", "on-tertiary": "#313030", "secondary-container": "#454747", "surface-dim": "#131313", "surface-container": "#1f1f1f", "on-background": "#e2e2e2", "inverse-on-surface": "#303030", "surface-container-low": "#1b1b1b", "outline-variant": "#5b4137", "surface-container-highest": "#353535", "surface": "#131313", "on-secondary-container": "#b4b5b5", "error": "#ffb4ab", "on-surface": "#e2e2e2", "on-tertiary-fixed-variant": "#474746", "inverse-primary": "#a73a00", "on-primary-fixed": "#370e00", "on-tertiary-container": "#2c2b2b", "outline": "#ab897d", "on-primary-container": "#521800", "tertiary": "#c8c6c5", "background": "#131313", "secondary": "#c6c6c7", "on-secondary-fixed-variant": "#454747", "error-container": "#93000a", "surface-variant": "#353535", "primary": "#ffb59a", "secondary-fixed-dim": "#c6c6c7", "on-secondary": "#2f3131", "tertiary-container": "#949292", "surface-container-lowest": "#0e0e0e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "container-max": "1440px", "margin-mobile": "1.5rem", "gutter": "2rem", "unit-xl": "8rem", "unit-md": "2rem", "unit-lg": "4rem", "unit-sm": "1rem", "margin-desktop": "4rem", "unit-xs": "0.5rem" }, "fontFamily": { "headline-lg": ["'Inter'"], "headline-md": ["'Inter'"], "display": ["'Inter'"], "body-md": ["'Inter'"], "body-lg": ["'Inter'"], "label-sm": ["'Inter'"], "headline-lg-mobile": ["'Inter'"] }, "fontSize": { "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500" }], "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } }</script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+</head>
+
+<body class="bg-surface font-body-md text-on-surface">
+    <header
+        class="fixed top-0 left-0 right-0 h-20 bg-surface-container-lowest z-50 flex items-center justify-between px-unit-md border-b border-surface-container-highest">
+        <div class="flex items-center gap-unit-md">
+            <span class="font-display text-headline-md tracking-tighter text-primary uppercase">Karen Barboza</span>
+        </div>
+        <nav class="flex flex-row gap-unit-md font-label-sm items-center">
+            <a aria-current="page"
+                class="font-label-sm transition-all uppercase tracking-widest text-primary-container underline underline-offset-8 cursor-pointer"
+                data-path="work">Work</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer"
+                data-path="about" href="#about">About</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all uppercase tracking-widest cursor-pointer"
+                data-path="newsletter" href="#newsletter">Newsletter</a>
+        </nav>
+        <div class="flex gap-unit-sm text-on-surface-variant items-center">
+            <a class="hover:text-primary transition-colors" href="#"><span
+                    class="material-symbols-outlined text-[20px]">alternate_email</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span
+                    class="material-symbols-outlined text-[20px]">share</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span
+                    class="material-symbols-outlined text-[20px]">public</span></a>
+            <a class="hover:text-primary transition-colors" href="#"><span
+                    class="material-symbols-outlined text-[20px]">movie</span></a>
+        </div>
+    </header>
+    <div class="w-full pt-20">
+        <!-- Secondary project nav bar -->
+        <div id="nav-projects-container"
+            class="sticky top-20 bg-surface-container-lowest/80 backdrop-blur-md z-40 border-b border-surface-container-highest">
+            <div id="nav-projects"
+                class="flex flex-row gap-unit-md py-4 px-unit-md overflow-x-auto whitespace-nowrap font-label-sm text-[13px] normal-case text-on-surface-variant max-w-7xl mx-auto">
+                <!-- Dynamic project links go here -->
+            </div>
+        </div>
+        <main class="relative bg-surface w-full">
+            <div class="flex flex-col w-full">
+                <!-- Portfolio Grid Container -->
+                <div id="portfolio-grid"
+                    class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full p-6 bg-background">
+                    <!-- Talk About It - Grade 2 -->
+                    <a href="project.html?id=talk-about-it"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Talk About It Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLv-RuCn6HygoiuJ53G7hykaYYUEYKxktwsPa0J8W0-0A8FuyYbcE87NH7rcjgCD6egznrw_a5wGH2U4ukIFvLQcaflLzBlI74VyQBqOZn_fbr7kwxgroIlvSBb4IGqAGhQQzyiKtTxrWtHv9ryPQdQX-PNJFnbdn04fX8CFPmsLazxoH1UzCGy-rvzrT4_gxiPplvdB6_sp65vhxuFXjiDB9akUpqRpyXssF_NWEgvbk2dSTiowb4KErw" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Talk
+                                About It - Grade 2</h2>
+                        </div>
+                    </a>
+                    <!-- The Light We Chase - Bloom -->
+                    <a href="project.html?id=light-we-chase"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="The Light We Chase Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLs1hg7y4Ebd8I_nDHje_TquA73zylk-l5TP4aDSDTQpLtNETBYUGvYJfVvzMuVcVoyu_1sdfdrU72sfMfWsmDAHTcTIrph3wqMtq3NPDuA20K7UEssBer33Cm_BmTRybj4WW5oGu2bA1GNrYYspHEByLBph3_fnu078M9M1VTXsIFxdp0c7I8I5X9GeYMIMCF6HOZ65OfsmhVHYXPBVOoMfAbKaP03ZXzDDMH9NySwv3WjbHPnHs2s5SQ" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">The
+                                Light We Chase - Bloom</h2>
+                        </div>
+                    </a>
+                    <!-- Rabbit - Insightful -->
+                    <a href="project.html?id=rabbit"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Rabbit Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLt_oI5xxzkOR9tPHj-iH1jF4UI4_CXkI5Bl-rvmZj95aQNvY-R7AM3uXBlI2BGsGH1E5IoyykJcBT8Wch4eogRPH-pE09FI4iFDsODUil9ZEJsWcQhaKToID_V0xgWufnQ1X8Lzk6wxz50emW8vAtx6VsFrf4XZjUuWDIFUQ1jmta0sSkmq_bmC0INuf-9Ff6FERqghmfDmzuyWeWmEWzGF6lmwU-Umqm6mKGYz4g5RJA5DMq_oWhl9" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">
+                                Rabbit - Insightful</h2>
+                        </div>
+                    </a>
+                    <!-- Hardcore Alphabet -->
+                    <a href="project.html?id=hardcore-alphabet"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Hardcore Alphabet Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLtTpXOWBMNZOUwqrryGsmeER2hJT1hMkhvXOJQRXzbDBp6moh0mnNCfOmYdcc6Vq11g2JiXrKbXEBswrvHiyRSfK4KF215iIsNvFNxq96HhKAuh-rZDhXye3sOo_VnabToQEcJEdvjJjGGKRhjo7xwo0K7w-og3ZD44_FrBoy04sPVajVMxmXKpMdmlWQD9jrnptIFbuSBaAY39YhcpYaIwrPw4TbfJidAHnTDhq_3ZD1WRe1tAw7jg" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">
+                                Hardcore Alphabet</h2>
+                        </div>
+                    </a>
+                    <!-- Art of Sport -->
+                    <a href="project.html?id=art-of-sport"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Art of Sport Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLv0ZBt8MyHBMChJIOmkwr32QDsM_8G1VVacqpZ_QfroINIG2G1gv4ze5575fJWVop_XyVHkAVCc8TRiyY9q0BPizEQ3QNCSksPST5sBUwtasiOCYX4nOOG08QUL8Qs8DpDF5rZuRkQZJI_KtIDasNbVZ7lXYDWckP9l2b6M416jFgT3kTlmij2KS7sOiXPD4wdz6zjZ-5UZ0q5lHMfuLMYUgAgOFvX96iAd23wvUJnQ1P_y9SdUDxDo" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Art
+                                of Sport</h2>
+                        </div>
+                    </a>
+                    <!-- Graphic Experimentation -->
+                    <a href="project.html?id=graphic-experimentation"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Graphic Experimentation Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLvi8FUQEo_SQfST1yTu5dWl0W9UOkTqQ4bomvdx6S5uLD1G-AuoGNhRyJvKE-Wkyo41KnJE2fhnlsUhzvfzbyVdAo3QAyMfQb6TmvAU70xdtmb1rKpJ4pQOdXQ1WAIN4C5JlD-9OVTEviGsli1iek-5L6vs3uGitUxugzW1v05ba_EZrdPrl_Hx6mC_ClQ1NKVDPvJGirFTzmGXteTEyvEqrqwxL_UHjGJoogDXmHuG28clCkbmnK_4hg" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">
+                                Graphic Experimentation</h2>
+                        </div>
+                    </a>
+                    <!-- Blues Legends -->
+                    <a href="project.html?id=blues-legends"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Blues Legends Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLt3HZ2YH4vvFFuXW6uE8fQ1t55gXOXKfj_vez_Bj6iaQ7FveG7BRTB-ueGVGPaZ7BWomvlfKsNX0FG0UbFCyUYdoEEZGt3NclMNRst5l4kpjBTkKIXsRFJRFicmcwk6kDjO5ptoybixMwNEptU50e06M26sMjipwtfdfRWVONkLR4ceoFPOS8W9ozVFJpDw2aR4Dpz-dLc8HFEyN_USUWhRhjst01tR0geFvjR4kzA-ArzkvmWSkbDYUw" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Blues
+                                Legends</h2>
+                        </div>
+                    </a>
+                    <!-- Skatin' Not Stirred -->
+                    <a href="project.html?id=skatin-not-stirred"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Skatin Not Stirred Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLs-xcdWxVw4zir3BuF6dozg6-E5DAD7cHzHoNCadllcFxFgwpTZBwOdZK-1zrx8orszi-D4y5bcBVGW_fPuucSDwmDGuDOzseI-CXqpGZ1FaA_xal2w200OYSXFGWFMRUvQ_-mSV80RYVuki3o3vpom5sS5sM5r86migCdumzcwuFfvWhzqlXhzmXcyCygxEg8bMVwzYTuM4mS1OOGtmitWpbI3CeewMEst_HsjOVBjeRFu7y6j0qolKA" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">
+                                Skatin' Not Stirred</h2>
+                        </div>
+                    </a>
+                    <!-- Touch Grass -->
+                    <a href="project.html?id=touch-grass"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Touch Grass Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLtyoXveBKfIZgniLihtXHlxC3NTnq4TG5yG9wTJO2wi8yAYLsIOh_j7KyUgP2a9sVoURF1l9oicq6-SGjk08kXbTXN2RaH1adQL8K_Qk6DvsbeR7d8BYSwadrBo2c5EOrqd7S36ICOZ8pVgp4KiSl80ZslExpqz3CIqdIgecwhU-09p8BZL0XanFDk_4dXbTaNxw3wWK5C1IgWhaULV8Wsxqxs2uwojRmRXyT6Z6IC1eO5UpCbb5qyn" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Touch
+                                Grass</h2>
+                        </div>
+                    </a>
+                    <!-- Two Sleepy People -->
+                    <a href="project.html?id=two-sleepy-people"
+                        class="group relative aspect-square w-full overflow-hidden bg-surface-container block">
+                        <img alt="Two Sleepy People Project"
+                            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida/AP1WRLsk2Xo8ooo7iBaMVJs1JtrDahVdYa7MLmS0FbbA4oZ6BMU38XGuu4ysG0HlH9xfk6wloG33agJ0vXcYJByD0G9Mze7wuqfWuVchBAhoLfa3Yx6ZzS8-d4Apch-0YLidFMQctxQLVcz-kTwkP3irHrFKpY8Iu42gOvU4sFyaMZ968INzmP8qiutxQPxQc-9vg6NoKFNZ0bN0o0YdlKMnbnNCs6eQAc6OSEa6k-hrv2BNUFbzSuok5eQW4w" />
+                        <div
+                            class="absolute inset-0 flex items-center justify-center bg-surface/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-sm p-unit-md text-center">
+                            <h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">Two
+                                Sleepy People</h2>
+                        </div>
+                    </a>
+                </div>
+                <!-- Project Detail Container (SPA Detail View) -->
+                <div id="project-detail"
+                    class="hidden p-unit-lg max-w-4xl mx-auto w-full space-y-unit-lg py-12 flex-grow">
+                    <button id="back-to-portfolio"
+                        class="flex items-center gap-unit-xs text-label-sm font-label-sm hover:text-primary transition-colors uppercase tracking-widest text-on-surface-variant">
+                        <span class="material-symbols-outlined text-[16px]">arrow_back</span> Back to Work
+                    </button>
+                    <h1 id="detail-title"
+                        class="font-display text-display text-primary uppercase tracking-tight leading-none">Project
+                        Title</h1>
+                    <div
+                        class="border border-surface-container-highest overflow-hidden aspect-video bg-surface-container">
+                        <img id="detail-image" alt="Project Image"
+                            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            src="" />
+                    </div>
+                    <div class="space-y-unit-md text-on-surface-variant font-body-lg">
+                        <p id="detail-description">Loading project description...</p>
+                        <div
+                            class="grid grid-cols-2 gap-unit-md pt-unit-md border-t border-surface-container-highest text-sm font-label-sm uppercase tracking-wider text-on-surface-variant">
+                            <div>
+                                <span class="block text-primary">Role</span>
+                                <span id="detail-role">Lead Art Director / Designer</span>
+                            </div>
+                            <div>
+                                <span class="block text-primary">Year</span>
+                                <span id="detail-year">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Back to Top Button -->
+                <div class="flex justify-center py-unit-md border-t border-surface-container-highest">
+                    <button
+                        class="flex items-center gap-unit-xs font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors uppercase tracking-tighter"
+                        onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                        <span class="material-symbols-outlined text-[16px]">north</span> Back to Top
+                    </button>
+                </div>
+
+                <script src="main.js"></script>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
