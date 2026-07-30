@@ -1,10 +1,14 @@
 const projectData = {
-    "talk-about-it": {
-        title: "Talk About It - Grade 2",
-        image: "https://lh3.googleusercontent.com/aida/AP1WRLv-RuCn6HygoiuJ53G7hykaYYUEYKxktwsPa0J8W0-0A8FuyYbcE87NH7rcjgCD6egznrw_a5wGH2U4ukIFvLQcaflLzBlI74VyQBqOZn_fbr7kwxgroIlvSBb4IGqAGhQQzyiKtTxrWtHv9ryPQdQX-PNJFnbdn04fX8CFPmsLazxoH1UzCGy-rvzrT4_gxiPplvdB6_sp65vhxuFXjiDB9akUpqRpyXssF_NWEgvbk2dSTiowb4KErw",
-        description: "An interactive, educational storytelling design project tailored for grade school learning platforms, focusing on speech development, graphical textures, and tactile typography.",
-        role: "Art Direction & UI Design",
-        year: "2024"
+    "resaltar": {
+        title: "RESALTAR",
+        image: "images/resaltar.png",
+        description: "Alfabeto modular experimental desarrollado a partir de un conjunto limitado de módulos. El sistema parte de rasgos de mi escritura manuscrita y explora la continuidad, el ritmo y la conexión entre signos.",
+        gallery: [
+            "images/resaltar.png",
+            "images/ABC.png"
+        ],
+        role: "Tipografía I · FADU UBA",
+        year: "2021"
     },
     "light-we-chase": {
         title: "The Light We Chase - Bloom",
@@ -169,6 +173,23 @@ function showProject(id) {
     if (detailDescription) detailDescription.textContent = data.description;
     if (detailRole) detailRole.textContent = data.role;
     if (detailYear) detailYear.textContent = data.year;
+
+    const detailGallery = document.getElementById('detail-gallery');
+    if (detailGallery) {
+        detailGallery.innerHTML = '';
+        if (data.gallery && data.gallery.length > 0) {
+            data.gallery.forEach(imgSrc => {
+                const imgWrap = document.createElement('div');
+                imgWrap.className = 'border border-surface-container-highest overflow-hidden bg-surface-container w-full mt-4';
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `${data.title} detail`;
+                img.className = 'w-full h-auto object-cover';
+                imgWrap.appendChild(img);
+                detailGallery.appendChild(imgWrap);
+            });
+        }
+    }
 
     portfolioGrid.classList.add('hidden');
     projectDetail.classList.remove('hidden');
