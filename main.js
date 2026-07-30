@@ -178,14 +178,19 @@ function showProject(id) {
     if (detailGallery) {
         detailGallery.innerHTML = '';
         if (data.gallery && data.gallery.length > 0) {
-            data.gallery.forEach(imgSrc => {
+            data.gallery.forEach((imgSrc, index) => {
                 const imgWrap = document.createElement('div');
-                imgWrap.className = 'border border-surface-container-highest overflow-hidden bg-surface-container w-full mt-4';
+                imgWrap.className = 'border border-surface-container-highest overflow-hidden bg-surface-container w-full mt-4 cursor-pointer';
                 const img = document.createElement('img');
                 img.src = imgSrc;
                 img.alt = `${data.title} detail`;
-                img.className = 'w-full h-auto object-cover';
+                img.className = 'w-full h-auto object-cover transition-transform duration-700 hover:scale-105';
                 imgWrap.appendChild(img);
+                imgWrap.addEventListener('click', () => {
+                    if (typeof openLightbox === 'function') {
+                        openLightbox(data.gallery, index);
+                    }
+                });
                 detailGallery.appendChild(imgWrap);
             });
         }
@@ -238,3 +243,106 @@ workLinks.forEach(link => {
 });
 
 
+
+// Lightbox Logic
+let currentGallery = [];
+let currentGalleryIndex = 0;
+
+function createLightbox() {
+    if (document.getElementById('lightbox')) return;
+    const lightboxHtml = `
+        <div id="lightbox" class="fixed inset-0 z-[100] bg-surface/95 hidden flex-col items-center justify-center backdrop-blur-sm opacity-0 transition-opacity duration-300">
+            <button id="lightbox-close" class="absolute top-6 right-6 text-on-surface hover:text-primary transition-colors p-2 z-10">
+                <span class="material-symbols-outlined text-[32px]">close</span>
+            </button>
+            
+            <div class="relative flex items-center justify-center w-full max-w-6xl px-4 md:px-12 h-full py-12">
+                <button id="lightbox-prev" class="absolute left-2 md:left-8 text-on-surface hover:text-primary transition-colors p-2 z-10">
+                    <span class="material-symbols-outlined text-[48px]">chevron_left</span>
+                </button>
+                
+                <img id="lightbox-img" src="" class="max-h-full max-w-full object-contain shadow-2xl" />
+                
+                <button id="lightbox-next" class="absolute right-2 md:right-8 text-on-surface hover:text-primary transition-colors p-2 z-10">
+                    <span class="material-symbols-outlined text-[48px]">chevron_right</span>
+                </button>
+            </div>
+            <div id="lightbox-counter" class="absolute bottom-6 font-label-sm text-on-surface-variant tracking-widest z-10"></div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', lightboxHtml);
+
+    const lightbox = document.getElementById('lightbox');
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', prevLightbox);
+    document.getElementById('lightbox-next').addEventListener('click', nextLightbox);
+    
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('relative')) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevLightbox();
+        if (e.key === 'ArrowRight') nextLightbox();
+    });
+}
+
+function openLightbox(galleryArray, startIndex) {
+    createLightbox();
+    currentGallery = galleryArray;
+    currentGalleryIndex = startIndex;
+    updateLightbox();
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    // slight delay for transition
+    setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+        lightbox.classList.add('opacity-100');
+    }, 10);
+    document.body.style.overflow = 'hidden'; // prevent scrolling
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+    lightbox.classList.remove('opacity-100');
+    lightbox.classList.add('opacity-0');
+    setTimeout(() => {
+        lightbox.classList.remove('flex');
+        lightbox.classList.add('hidden');
+    }, 300);
+    document.body.style.overflow = '';
+}
+
+function updateLightbox() {
+    if (currentGallery.length === 0) return;
+    const img = document.getElementById('lightbox-img');
+    img.src = currentGallery[currentGalleryIndex];
+    document.getElementById('lightbox-counter').textContent = `${currentGalleryIndex + 1} / ${currentGallery.length}`;
+    
+    // Hide prev/next if only 1 image or at ends
+    document.getElementById('lightbox-prev').style.display = currentGalleryIndex === 0 ? 'none' : 'block';
+    document.getElementById('lightbox-next').style.display = currentGalleryIndex === currentGallery.length - 1 ? 'none' : 'block';
+}
+
+function prevLightbox(e) {
+    if (e) e.stopPropagation();
+    if (currentGalleryIndex > 0) {
+        currentGalleryIndex--;
+        updateLightbox();
+    }
+}
+
+function nextLightbox(e) {
+    if (e) e.stopPropagation();
+    if (currentGalleryIndex < currentGallery.length - 1) {
+        currentGalleryIndex++;
+        updateLightbox();
+    }
+}

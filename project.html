@@ -296,14 +296,19 @@
         if (galleryContainer) {
             galleryContainer.innerHTML = '';
             if (project.gallery && project.gallery.length > 0) {
-                project.gallery.forEach(imgSrc => {
+                project.gallery.forEach((imgSrc, index) => {
                     const imgWrap = document.createElement('div');
-                    imgWrap.className = 'border border-surface-container-highest overflow-hidden bg-surface-container w-full mt-4';
+                    imgWrap.className = 'border border-surface-container-highest overflow-hidden bg-surface-container w-full mt-4 cursor-pointer';
                     const img = document.createElement('img');
                     img.src = imgSrc;
                     img.alt = `${project.title} detail`;
-                    img.className = 'w-full h-auto object-cover';
+                    img.className = 'w-full h-auto object-cover transition-transform duration-700 hover:scale-105';
                     imgWrap.appendChild(img);
+                    imgWrap.addEventListener('click', () => {
+                        if (typeof openLightbox === 'function') {
+                            openLightbox(project.gallery, index);
+                        }
+                    });
                     galleryContainer.appendChild(imgWrap);
                 });
             }
